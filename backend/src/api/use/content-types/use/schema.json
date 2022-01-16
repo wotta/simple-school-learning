@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "uses",
+  "info": {
+    "singularName": "use",
+    "pluralName": "uses",
+    "displayName": "uses"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "builder": {
+      "type": "dynamiczone",
+      "components": [
+        "builder.content"
+      ]
+    },
+    "seo": {
+      "type": "dynamiczone",
+      "components": [
+        "seo.advanced",
+        "seo.basic",
+        "seo.json-ld-schema",
+        "seo.open-graph",
+        "seo.sitemap"
+      ]
+    }
+  }
+}

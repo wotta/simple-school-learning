@@ -1,0 +1,8 @@
+{
+  "homepage": {
+  },
+  "global": {
+    "siteName": "Strapi Blog",
+    "favicon": null
+  }
+}

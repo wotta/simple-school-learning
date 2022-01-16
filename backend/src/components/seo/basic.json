@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_seo_basics",
+  "info": {
+    "displayName": "basic",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 160
+    }
+  }
+}

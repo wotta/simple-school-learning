@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_seo_sitemaps",
+  "info": {
+    "displayName": "sitemap",
+    "icon": "sitemap"
+  },
+  "options": {},
+  "attributes": {
+    "change_frequency": {
+      "type": "enumeration",
+      "enum": [
+        "always",
+        "hourly",
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly",
+        "never"
+      ],
+      "default": "weekly"
+    },
+    "priority": {
+      "type": "decimal",
+      "min": 0,
+      "max": 1,
+      "default": 0.5
+    }
+  }
+}

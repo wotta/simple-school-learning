@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_social_links",
+  "info": {
+    "displayName": "link",
+    "icon": "eye",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "handle": {
+      "type": "string"
+    },
+    "display": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

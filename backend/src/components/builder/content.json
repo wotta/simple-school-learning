@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_builder_contents",
+  "info": {
+    "displayName": "content",
+    "icon": "pencil-alt"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

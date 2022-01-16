@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_seo_open_graphs",
+  "info": {
+    "displayName": "open graph",
+    "icon": "file-image"
+  },
+  "options": {},
+  "attributes": {
+    "social_title": {
+      "type": "string"
+    },
+    "social_description": {
+      "type": "text"
+    },
+    "social_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "twitter_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_seo_advanceds",
+  "info": {
+    "displayName": "advanced",
+    "icon": "toggle-on",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "no_index": {
+      "type": "boolean",
+      "default": false
+    },
+    "no_follow": {
+      "type": "boolean",
+      "default": false
+    },
+    "canonical_url": {
+      "type": "enumeration",
+      "enum": [
+        "current",
+        "external",
+        "entry"
+      ],
+      "default": "current"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

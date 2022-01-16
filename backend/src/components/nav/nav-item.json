@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_nav_nav_items",
+  "info": {
+    "displayName": "nav item",
+    "icon": "square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "blank": {
+      "type": "boolean",
+      "default": false
+    },
+    "display": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
