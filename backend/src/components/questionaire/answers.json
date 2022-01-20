@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_questionaire_answers",
+  "info": {
+    "displayName": "answers",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "answer": {
+      "type": "text"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "correct": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

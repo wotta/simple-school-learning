@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_questionaire_questionnaires",
+  "info": {
+    "displayName": "questionnaire",
+    "icon": "edit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "answers": {
+      "displayName": "answers",
+      "type": "component",
+      "repeatable": true,
+      "component": "questionaire.answers"
+    },
+    "question": {
+      "type": "richtext"
+    }
+  }
+}
