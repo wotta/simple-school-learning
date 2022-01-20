@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_questionaire_stories",
+  "info": {
+    "displayName": "story",
+    "icon": "book-open"
+  },
+  "options": {},
+  "attributes": {
+    "story": {
+      "type": "richtext"
+    }
+  }
+}

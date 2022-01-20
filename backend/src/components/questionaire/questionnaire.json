@@ -14,7 +14,7 @@
       "component": "questionaire.answers"
     },
     "question": {
-      "type": "richtext"
+      "type": "string"
     }
   }
 }

@@ -25,7 +25,8 @@
     "content": {
       "type": "dynamiczone",
       "components": [
-        "questionaire.questionnaire"
+        "questionaire.questionnaire",
+        "questionaire.story"
       ]
     },
     "subject": {
