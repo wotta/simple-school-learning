@@ -1,12 +1,15 @@
-import React from "react"
 import Image from "next/image"
 import Seo from "../components/seo"
+import { GlobalContext } from "./_app"
 import Layout from "../components/layout"
+import React, { useContext } from "react"
 import ReactMarkdown from "react-markdown"
 import Courses from "../components/courses"
 import { fetchAPI, getStrapiURL } from "../lib/api"
 
-const Home = ({ navigation, homepage, courses }) => {
+const Home = ({ homepage, courses }) => {
+  const { navigation } = useContext(GlobalContext)
+
   let content = homepage.attributes.builder.find(
     (item) => item.__component === "builder.content"
   )
@@ -56,8 +59,7 @@ const Home = ({ navigation, homepage, courses }) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [navigationRes, homepageRes, coursesRes] = await Promise.all([
-    fetchAPI("/navigation", { populate: "*" }),
+  const [homepageRes, coursesRes] = await Promise.all([
     fetchAPI("/homepage", {
       populate: {
         seo: { populate: "*" },
@@ -73,7 +75,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      navigation: navigationRes.data.attributes.items,
       homepage: homepageRes.data,
       courses: coursesRes.data,
     },
