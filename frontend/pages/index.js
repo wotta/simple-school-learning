@@ -3,9 +3,10 @@ import Image from "next/image"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
 import ReactMarkdown from "react-markdown"
+import Courses from "../components/courses"
 import { fetchAPI, getStrapiURL } from "../lib/api"
 
-const Home = ({ navigation, homepage }) => {
+const Home = ({ navigation, homepage, courses }) => {
   let content = homepage.attributes.builder.find(
     (item) => item.__component === "builder.content"
   )
@@ -45,6 +46,8 @@ const Home = ({ navigation, homepage }) => {
               {content.content}
             </ReactMarkdown>
           </article>
+
+          <Courses courses={courses} />
         </main>
       </div>
     </Layout>
@@ -53,12 +56,17 @@ const Home = ({ navigation, homepage }) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [navigationRes, homepageRes] = await Promise.all([
+  const [navigationRes, homepageRes, coursesRes] = await Promise.all([
     fetchAPI("/navigation", { populate: "*" }),
     fetchAPI("/homepage", {
       populate: {
         seo: { populate: "*" },
         builder: { populate: "*" },
+      },
+    }),
+    fetchAPI("/courses", {
+      populate: {
+        subject: { populate: "*" },
       },
     }),
   ])
@@ -67,6 +75,7 @@ export async function getStaticProps() {
     props: {
       navigation: navigationRes.data.attributes.items,
       homepage: homepageRes.data,
+      courses: coursesRes.data,
     },
     revalidate: 1,
   }
