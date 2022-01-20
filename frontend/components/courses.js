@@ -8,7 +8,10 @@ const Courses = ({ courses }) => {
         {courses.map((course) => {
           console.log()
           return (
-            <div className="rounded bg-gray-200 border border-gray-300 overflow-hidden shadow-xl" key={course.id}>
+            <div
+              className="rounded bg-gray-200 border border-gray-300 overflow-hidden shadow-xl"
+              key={course.id}
+            >
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">
                   <Link href={`/courses/${course.attributes.slug}`}>
