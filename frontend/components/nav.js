@@ -43,7 +43,7 @@ const Nav = ({ navigation }) => {
           <Link href="/">
             <a className="text-white no-underline hover:text-white hover:no-underline">
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-pink-600 to-purple-600 text-5xl font-black motion-safe:animate-pulse">
-                <i className="em em-grinning" /> Wotta
+                <i className="em em-grinning" /> SCL
               </span>
             </a>
           </Link>
