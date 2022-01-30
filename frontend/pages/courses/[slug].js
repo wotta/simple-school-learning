@@ -5,6 +5,9 @@ import Layout from "../../components/layout"
 
 const Course = ({ course }) => {
   const { navigation } = useContext(GlobalContext)
+  let shuffledQuestions = course.attributes.content
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 10)
 
   return (
     <Layout navigation={navigation}>
@@ -14,6 +17,30 @@ const Course = ({ course }) => {
             <div>
               <h1>Course</h1>
               <p>{course.attributes.name}</p>
+
+              <hr />
+
+              <form>
+                {shuffledQuestions.map((item, index) => {
+                  let shuffledAnswers = item.answers.sort(
+                    () => Math.random() - 0.5
+                  )
+
+                  return (
+                    <div key={index}>
+                      <p>{item.question}</p>
+                      {shuffledAnswers.map((_answer, _index) => {
+                        return (
+                          <label key={_index}>
+                            <input type="radio" name={`${index}`} />
+                            {_answer.answer}
+                          </label>
+                        )
+                      })}
+                    </div>
+                  )
+                })}
+              </form>
             </div>
           </article>
         </main>
@@ -23,7 +50,6 @@ const Course = ({ course }) => {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(params)
   const courseRes = await fetchAPI("/courses", {
     filters: {
       slug: {
@@ -31,7 +57,9 @@ export async function getStaticProps({ params }) {
       },
     },
     populate: {
-      content: "*",
+      content: {
+        populate: "*",
+      },
     },
   })
 
