@@ -37,6 +37,12 @@
     },
     "description": {
       "type": "text"
+    },
+    "amount_questions": {
+      "type": "integer",
+      "default": 5,
+      "min": 5,
+      "max": 10
     }
   }
 }
