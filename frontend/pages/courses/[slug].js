@@ -19,7 +19,7 @@ const Course = ({ course }) => {
           answers: [...question.answers].sort(() => 0.5 - Math.random()),
         }
       })
-      .slice(0, 10)
+      .slice(0, course.attributes.amount_questions ?? 5)
   }, [course])
 
   const validateCourse = (e) => {
