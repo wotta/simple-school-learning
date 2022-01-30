@@ -11,8 +11,6 @@ const Course = ({ course }) => {
   const [correctAnswers, setCorrectAnswers] = useState([])
 
   const shuffledQuestions = useMemo(() => {
-    console.log("useMemo")
-
     return [...course.attributes.content]
       .sort(() => 0.5 - Math.random())
       .map((question) => {
