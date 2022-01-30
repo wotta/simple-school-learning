@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import React, { useContext } from "react"
 import ReactMarkdown from "react-markdown"
 import Courses from "../components/courses"
-import { fetchAPI, getStrapiURL } from "../lib/api"
+import { fetchAPI } from "../lib/api"
 
 const Home = ({ homepage, courses }) => {
   const { navigation } = useContext(GlobalContext)
