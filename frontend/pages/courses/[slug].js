@@ -60,7 +60,7 @@ const Course = ({ course }) => {
         <main>
           <article>
             <div>
-              <h1>Oefenen opdracht:</h1>
+              <h1>Oefenopdracht:</h1>
               <h3>{course.attributes.name}</h3>
 
               {validated && (
