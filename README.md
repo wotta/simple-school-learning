@@ -1,9 +1,10 @@
-# Strapi 4 & Next.js 11 template
+# Simple school learning
 
 ![Banner](banner.png)
 
-This is my custom template starter. The frontend is build with [Next.js](https://nextjs.org/) and the backend is build with [Strapi](https://strapi.io/).
-The repository is based on [Strapi starter blog next](https://github.com/strapi/strapi-starter-next-blog).
+Simple school learning is a [Strapi](https://strapi.io/)/[Next.js](https://nextjs.org/) based application which aims to create a simple but powerfull tool to create small courses.
+
+This aims to support you with creating some variety for learning basic elementary School things.
 
 See working demo [here](https://monosnap.com/file/mtHxcFrjMceOFN8V9KKnoB2cetcNaW).
 
@@ -24,4 +25,3 @@ To start the development server, run the following command:
 ```bash
 $ yarn dev
 ```
-
