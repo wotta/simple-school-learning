@@ -6,7 +6,6 @@ const Courses = ({ courses }) => {
       <h2>Courses</h2>
       <div className="courses-list grid grid-cols-2 gap-4">
         {courses.map((course) => {
-          console.log()
           return (
             <div
               className="rounded bg-gray-200 border border-gray-300 overflow-hidden shadow-xl"
