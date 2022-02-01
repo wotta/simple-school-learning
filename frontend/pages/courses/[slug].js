@@ -62,7 +62,6 @@ const Course = ({ course }) => {
             <div>
               <h1>Oefenopdracht:</h1>
               <h3>{course.attributes.name}</h3>
-
               {validated && (
                 <div
                   className={`${
