@@ -1,11 +1,12 @@
 import Image from "next/image"
+import { format } from "date-fns"
 import Seo from "../components/seo"
+import { fetchAPI } from "../lib/api"
 import { GlobalContext } from "./_app"
 import Layout from "../components/layout"
 import React, { useContext } from "react"
 import ReactMarkdown from "react-markdown"
 import Courses from "../components/courses"
-import { fetchAPI } from "../lib/api"
 
 const Home = ({ homepage, courses }) => {
   const { navigation } = useContext(GlobalContext)
@@ -59,6 +60,9 @@ const Home = ({ homepage, courses }) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
+
+  const date = format(new Date(), "yyyy-MM-dd")
+
   const [homepageRes, coursesRes] = await Promise.all([
     fetchAPI("/homepage", {
       populate: {
@@ -70,6 +74,18 @@ export async function getStaticProps() {
       populate: {
         subject: { populate: "*" },
       },
+      filters: {
+        $or: [
+          {
+            end_date: {
+              "$gte": date,
+            }
+          },
+          {
+            end_date: { $null: true }
+          },
+        ]
+      }
     }),
   ])
 
