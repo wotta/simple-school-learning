@@ -1,3 +1,4 @@
+import { format } from "date-fns"
 import JSConfetti from "js-confetti"
 import { GlobalContext } from "../_app"
 import { fetchAPI } from "../../lib/api"
@@ -169,8 +170,25 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  // Run API calls in parallel
-  const courses = await fetchAPI("/courses")
+  const date = format(new Date(), "yyyy-MM-dd")
+
+  const courses = await fetchAPI("/courses", {
+    populate: {
+      subject: { populate: "*" },
+    },
+    filters: {
+      $or: [
+        {
+          end_date: {
+            $gte: date,
+          },
+        },
+        {
+          end_date: { $null: true },
+        },
+      ],
+    },
+  })
 
   return {
     paths: courses.data.map((_course) => {
