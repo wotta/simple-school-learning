@@ -42,7 +42,7 @@
       "type": "integer",
       "default": 5,
       "min": 3,
-      "max": 10
+      "max": 15
     }
   }
 }
