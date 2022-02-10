@@ -1,4 +1,4 @@
-import { format } from "date-fns"
+import { format, lastDayOfDecade } from "date-fns"
 import JSConfetti from "js-confetti"
 import { GlobalContext } from "../_app"
 import { fetchAPI } from "../../lib/api"
@@ -10,6 +10,7 @@ const Course = ({ course }) => {
 
   const [validated, setValidated] = useState(false)
   const [correctAnswers, setCorrectAnswers] = useState([])
+  const [wrongAnswers, setWrongAnswers] = useState([])
 
   const shuffledQuestions = useMemo(() => {
     return [...course.attributes.content]
@@ -40,6 +41,7 @@ const Course = ({ course }) => {
         question_id: key,
         answer_id: value,
         correct: foundAnswer[0].correct,
+        question: question,
       })
     }
 
@@ -47,6 +49,11 @@ const Course = ({ course }) => {
     setCorrectAnswers(
       answers.filter((answer) => {
         return answer.correct === true
+      })
+    )
+    setWrongAnswers(
+      answers.filter((answer) => {
+        return answer.correct === false
       })
     )
   }
@@ -68,13 +75,27 @@ const Course = ({ course }) => {
                   className={`${
                     correctAnswers.length === shuffledQuestions.length
                       ? "bg-green-500"
-                      : "bg-gray-500"
-                  } text-white p-4 rounded`}
+                    : "bg-gray-200 border-gray-300"
+                  }  rounded border overflow-hidden shadow-xl px-6 py-4`}
                 >
                   <p>
                     Je hebt {correctAnswers.length} van de{" "}
                     {shuffledQuestions.length} vragen goed
                   </p>
+
+                  {wrongAnswers.length > 0 && (
+                    <>
+                      <p>Bij de volgende vragen heb je een fout antwoord ingevuld</p>
+                      {wrongAnswers.map((answer, _key) => {
+                        return (
+                          <details key={_key}>
+                            <summary>{answer.question.question}<strong>: {answer.question.answers.find((_answer) => _answer.id === parseInt(answer.answer_id)).answer}</strong></summary>
+                            Het goede antwoord is: <strong>{answer.question.answers.find((_answer) => _answer.correct === true).answer}</strong>
+                          </details>
+                        )
+                      })}
+                    </>
+                  )}
 
                   {correctAnswers.length === shuffledQuestions.length && (
                     <>
