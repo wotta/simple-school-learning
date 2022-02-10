@@ -1,4 +1,4 @@
-import { format, lastDayOfDecade } from "date-fns"
+import { format } from "date-fns"
 import JSConfetti from "js-confetti"
 import { GlobalContext } from "../_app"
 import { fetchAPI } from "../../lib/api"
