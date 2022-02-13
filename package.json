@@ -1,7 +1,11 @@
 {
-  "name": "woutervm",
+  "name": "@wotta/simple-school-learning",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=12 <13 || >=14 <15",
+    "npm": ">=6"
+  },
   "scripts": {
     "develop:backend": "yarn --cwd backend develop",
     "develop:frontend": "wait-on http://localhost:1337/admin && yarn --cwd frontend develop",
