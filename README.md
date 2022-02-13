@@ -13,6 +13,7 @@ See working demo [here](https://monosnap.com/file/mtHxcFrjMceOFN8V9KKnoB2cetcNaW
 To install the backend and the frontend, run the following commands:
 
 *You need to make sure you have the following node version: `v12 OR v14`*
+
 *You need to make sure you use yarn or npm version: `v6`*
 
 ```bash
