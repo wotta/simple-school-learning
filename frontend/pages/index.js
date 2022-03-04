@@ -9,10 +9,6 @@ import Courses from "../components/courses"
 const Home = ({ homepage, courses }) => {
   const { navigation } = useContext(GlobalContext)
 
-  let content = homepage.attributes.builder.find(
-    (item) => item.__component === "builder.content"
-  )
-
   return (
     <Layout navigation={navigation}>
       <Seo seo={homepage.attributes.seo} />
