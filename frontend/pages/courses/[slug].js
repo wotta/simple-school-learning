@@ -79,7 +79,7 @@ const Course = ({ course }) => {
                   }  rounded border overflow-hidden shadow-xl px-6 py-4`}
                 >
                   <p>
-                    Je hebt {correctAnswers.length} van de{" "}
+                    You hebt {correctAnswers.length} van de{" "}
                     {shuffledQuestions.length} vragen goed
                   </p>
 
