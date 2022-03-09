@@ -4,6 +4,7 @@ import { GlobalContext } from "../_app"
 import { fetchAPI } from "../../lib/api"
 import Layout from "../../components/layout"
 import React, { useContext, useMemo, useState } from "react"
+import { __ } from "../../lib/trans"
 
 const Course = ({ course }) => {
   const { navigation } = useContext(GlobalContext)
@@ -75,7 +76,7 @@ const Course = ({ course }) => {
                   className={`${
                     correctAnswers.length === shuffledQuestions.length
                       ? "bg-green-500"
-                    : "bg-gray-200 border-gray-300"
+                      : "bg-gray-200 border-gray-300"
                   }  rounded border overflow-hidden shadow-xl px-6 py-4`}
                 >
                   <p>
@@ -131,6 +132,7 @@ const Course = ({ course }) => {
 
               {validated === false && (
                 <div className="rounded bg-gray-200 border border-gray-300 overflow-hidden shadow-xl">
+                  {__("title", null, "BE")}
                   <form className="px-6 py-4" onSubmit={validateCourse}>
                     {shuffledQuestions.map((item, index) => {
                       return (
